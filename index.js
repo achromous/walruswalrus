@@ -11,7 +11,7 @@ var app = http.createServer(function(req, res) {
 }).listen(8080);
 
 var io = socketIO.listen(app);
-io.set('origions', '*');
+io.set('origins', '*');
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
