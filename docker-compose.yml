@@ -1,0 +1,10 @@
+walruswalrus:
+  build: .
+  command: node index.js
+  container_name: walruswalrus
+  ports:
+    - '80:80'
+    - '8080:8080'
+  volumes:
+    - .:/usr/src
+    - /usr/src/node_modules
