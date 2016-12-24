@@ -45,7 +45,12 @@ io.sockets.on('connection', function(socket) {
       socket.emit('joined', room, socket.id);
       io.sockets.in(room).emit('ready');
     } else { // max two clients
-      socket.emit('full', room);
+      log('Client ID ' + socket.id + ' joined room ' + room);
+      io.sockets.in(room).emit('join', room);
+      socket.join(room);
+      socket.emit('joined', room, socket.id);
+      io.sockets.in(room).emit('ready');
+      // socket.emit('full', room);
     }
   });
 
