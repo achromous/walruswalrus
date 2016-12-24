@@ -8,3 +8,11 @@ walruswalrus:
   volumes:
     - .:/usr/src
     - /usr/src/node_modules
+coturn:
+  build: docker-turnserver
+  container_name: coturn
+  command: bash -c "service coturn start && tail -f /dev/null"
+  tty: true
+  ports:
+    - '3478:3478'
+    - '3478:3478/udp'

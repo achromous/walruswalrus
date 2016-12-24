@@ -10,7 +10,7 @@ var turnReady;
 
 var pcConfig = {
   'iceServers': [{
-    'url': 'stun:stun.l.google.com:19302'
+    'url': 'stun:walruswalr.us:3478'
   }]
 };
 
@@ -122,9 +122,10 @@ console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
   requestTurn(
-    'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
+    'https://walruswalr.us'
   );
 }
+
 
 function maybeStart() {
   console.log('>>>>>>> maybeStart() ', isStarted, localStream, isChannelReady);
